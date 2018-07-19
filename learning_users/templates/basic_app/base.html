@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <nav class='navbar navbar-expand-lg navbar-light bg-light'>
+      <div class="container">
+        <ul class='nav navbar-nav'>
+          <a class="navbar-brand" href="{% url 'index' %}">Django Homeee!</a>
+          <a class="navbar-link" href="{% url 'admin:index' %}">Admin</a>
+          <a class="navbar-link" href="{% url 'basic_app:register' %}">Register</a>
+          {% if user.is_authenticated %}
+            <li> <a class='navbar-link' href="{% url 'logout' %}">Logout</a> </li>
+          {% else %}
+            <li> <a class="navbar-link" href="{% url 'basic_app:user_login' %}">Login</a> </li>
+          {% endif %}
+
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container">
+    {% block body_block %}
+    {% endblock %}
+    </div>
+
+  </body>
+</html>
