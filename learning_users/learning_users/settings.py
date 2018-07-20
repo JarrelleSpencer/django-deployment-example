@@ -28,7 +28,7 @@ SECRET_KEY = '_cyevcxkg@lo8b&+e#&_ib#*4*^0i1gg=^=0&58qdx(0&bl)$n'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['jarrelles.pythonanywhere.com']
 
 
 # Application definition
